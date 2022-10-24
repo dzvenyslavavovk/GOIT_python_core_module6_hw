@@ -92,15 +92,15 @@ def main(folder: Path):
         handle_folder(folder)
 
 
+def main_function():
+    try:
+        folder_for_scan = Path(sys.argv[1])
+        print(f'Start in folder {folder_for_scan.resolve()}')
+        main(folder_for_scan.resolve())
+    except:
+        print("File not found! Try again!")
+
 if __name__ == '__main__':
-    if sys.argv[1]:
-        try:
-            folder_for_scan = Path(sys.argv[1])
-            print(f'Start in folder {folder_for_scan.resolve()}')
-            main(folder_for_scan.resolve())
-        except:
-            print("File not found! Try again!")
-
-
+    main_function()
 
 # TODO: запускаємо:  python3 main.py `назва_папки_для_сортування`
